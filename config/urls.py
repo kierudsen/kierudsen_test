@@ -1,4 +1,5 @@
 from django.conf import settings
+from django.conf.urls import include, url
 from django.urls import include, path, re_path
 from django.conf.urls.static import static
 from django.contrib import admin
@@ -11,20 +12,24 @@ from wagtail.documents import urls as wagtaildocs_urls
 from wagtail.core import urls as wagtail_urls
 
 urlpatterns = [
-    path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
-    path(
-        "about/", TemplateView.as_view(template_name="pages/about.html"), name="about"
-    ),
+    #path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
+    #path(
+    #    "about/", TemplateView.as_view(template_name="pages/about.html"), name="about"
+    #),
     # Django Admin, use {% url 'admin:index' %}
-    path(settings.ADMIN_URL, admin.site.urls),
+    #path(settings.ADMIN_URL, admin.site.urls),
     # User management
-    path("users/", include("kierudsen.users.urls", namespace="users")),
-    path("accounts/", include("allauth.urls")),
+    #path("users/", include("kierudsen.users.urls", namespace="users")),
+    #path("accounts/", include("allauth.urls")),
     # Your stuff: custom urls includes go here
     # wagtail URL conf
-    re_path(r'^cms/', include(wagtailadmin_urls)),
-    re_path(r'^documents/', include(wagtaildocs_urls)),
-    re_path(r'^pages/', include(wagtail_urls)),
+    #re_path(r'^cms/', include(wagtailadmin_urls)),
+    #re_path(r'^documents/', include(wagtaildocs_urls)),
+    #re_path(r'^pages/', include(wagtail_urls)),
+    url(r'^django-admin/', (admin.site.urls)),
+    url(r'^cms/', include(wagtailadmin_urls)),
+    url(r'^documents/', include(wagtaildocs_urls)),
+    url(r'^pages/', include(wagtail_urls)),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:
