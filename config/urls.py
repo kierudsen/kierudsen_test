@@ -32,6 +32,10 @@ urlpatterns = [
     url(r'^pages/', include(wagtail_urls)),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
+urlpatterns += [
+    url(r'', include(wagtail_urls))
+]
+
 if settings.DEBUG:
     # This allows the error pages to be debugged during development, just visit
     # these url in browser to see how these error pages look like.
@@ -58,6 +62,4 @@ if settings.DEBUG:
 
         urlpatterns = [path("__debug__/", include(debug_toolbar.urls))] + urlpatterns
 
-urlpatterns += [
-    url(r'', include(wagtail_urls))
-]
+
