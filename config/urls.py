@@ -17,7 +17,7 @@ urlpatterns = [
     #    "about/", TemplateView.as_view(template_name="pages/about.html"), name="about"
     #),
     # Django Admin, use {% url 'admin:index' %}
-    #path(settings.ADMIN_URL, admin.site.urls),
+    url(settings.ADMIN_URL, admin.site.urls),
     # User management
     #path("users/", include("kierudsen.users.urls", namespace="users")),
     #path("accounts/", include("allauth.urls")),
@@ -57,3 +57,7 @@ if settings.DEBUG:
         import debug_toolbar
 
         urlpatterns = [path("__debug__/", include(debug_toolbar.urls))] + urlpatterns
+
+urlpatterns += [
+    url(r'', include(wagtail_urls))
+]
