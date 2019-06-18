@@ -5,12 +5,13 @@ from django.contrib import admin
 from django.views import defaults as default_views
 
 # Wagtail imports
+from django.views.generic import TemplateView
 from wagtail.admin import urls as wagtailadmin_urls
 from wagtail.documents import urls as wagtaildocs_urls
 from wagtail.core import urls as wagtail_urls
 
 urlpatterns = [
-    # path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
+    url("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
     # path(
     #    "about/", TemplateView.as_view(template_name="pages/about.html"), name="about"
     # ),
