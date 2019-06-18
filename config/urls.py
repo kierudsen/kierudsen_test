@@ -12,9 +12,9 @@ from wagtail.core import urls as wagtail_urls
 
 urlpatterns = [
     url("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
-    # path(
-    #    "about/", TemplateView.as_view(template_name="pages/about.html"), name="about"
-    # ),
+    url(
+        "about/", TemplateView.as_view(template_name="pages/about.html"), name="about"
+    ),
     # Django Admin, use {% url 'admin:index' %}
     url(settings.ADMIN_URL, admin.site.urls),
     # User management
