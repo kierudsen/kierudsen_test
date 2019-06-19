@@ -66,7 +66,7 @@ DJANGO_APPS = [
 
     # Codered CMS
     'coderedcms',
-    'bootstrap4'
+    'bootstrap4',
     'modelcluster',
     'taggit',
     'wagtailfontawesome',
