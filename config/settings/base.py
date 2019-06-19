@@ -101,7 +101,7 @@ THIRD_PARTY_APPS = [
 ]
 
 LOCAL_APPS = [
-    "kierudsen.users.apps.UsersConfig",
+    "kierudsen.website.apps.UsersConfig",
     # Your stuff: custom apps go here
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -120,7 +120,7 @@ AUTHENTICATION_BACKENDS = [
     "allauth.account.auth_backends.AuthenticationBackend",
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#auth-user-model
-AUTH_USER_MODEL = "users.User"
+AUTH_USER_MODEL = "website.User"
 # https://docs.djangoproject.com/en/dev/ref/settings/#login-redirect-url
 # LOGIN_REDIRECT_URL = "users:redirect"
 # https://docs.djangoproject.com/en/dev/ref/settings/#login-url
@@ -286,9 +286,9 @@ ACCOUNT_EMAIL_REQUIRED = True
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
 ACCOUNT_EMAIL_VERIFICATION = "mandatory"
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
-ACCOUNT_ADAPTER = "kierudsen.users.adapters.AccountAdapter"
+ACCOUNT_ADAPTER = "kierudsen.website.adapters.AccountAdapter"
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
-SOCIALACCOUNT_ADAPTER = "kierudsen.users.adapters.SocialAccountAdapter"
+SOCIALACCOUNT_ADAPTER = "kierudsen.website.adapters.SocialAccountAdapter"
 
 
 # Your stuff...
