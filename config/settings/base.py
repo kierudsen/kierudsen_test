@@ -60,8 +60,19 @@ DJANGO_APPS = [
     "django.contrib.sites",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+
     # "django.contrib.humanize", # Handy template tags
     "django.contrib.admin",
+
+    # Codered CMS
+    'coderedcms',
+    'bootstrap4'
+    'modelcluster',
+    'taggit',
+    'wagtailfontawesome',
+    'wagtailcache',
+    'wagtailimportexport',
+
     # Wagtail apps
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
@@ -74,6 +85,10 @@ DJANGO_APPS = [
     'wagtail.search',
     'wagtail.admin',
     'wagtail.core',
+    'wagtail.contrib.settings',
+    'wagtail.contrib.modeladmin',
+    'wagtail.contrib.table_block',
+
 ]
 THIRD_PARTY_APPS = [
     "crispy_forms",
@@ -81,9 +96,6 @@ THIRD_PARTY_APPS = [
     "allauth.account",
     "allauth.socialaccount",
     "rest_framework",
-    # Wagtail apps
-    'modelcluster',
-    'taggit',
 ]
 
 LOCAL_APPS = [
@@ -203,7 +215,7 @@ TEMPLATES = [
     }
 ]
 # http://django-crispy-forms.readthedocs.io/en/latest/install.html#template-packs
-CRISPY_TEMPLATE_PACK = "bootstrap4"
+# CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 # FIXTURES
 # ------------------------------------------------------------------------------
@@ -281,3 +293,15 @@ SOCIALACCOUNT_ADAPTER = "kierudsen.users.adapters.SocialAccountAdapter"
 # ------------------------------------------------------------------------------
 # Wagtail site name
 WAGTAIL_SITE_NAME = 'kierudsen'
+
+# Bootstrap
+BOOTSTRAP4 = {
+    # set to blank since coderedcms already loads jquery and bootstrap
+    'jquery_url': '',
+    'base_url': '',
+    # remove green highlight on inputs
+    'succes_css_class': ''
+}
+
+# Tags
+TAGGIT_CASE_INSENSITIVE = True
