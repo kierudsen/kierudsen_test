@@ -15,7 +15,7 @@ from coderedcms import urls as codered_urls
 urlpatterns = [
     # Admin
     path(r'^django-admin/', admin.site.urls),
-    path(r'^admin/', include(wagtailadmin_urls)),
+    path(r'^admin/', include(coderedadmin_urls)),
 
     # Documents
     path(r'^docs/', include(wagtaildocs_urls)),

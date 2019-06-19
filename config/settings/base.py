@@ -8,6 +8,8 @@ ROOT_DIR = (
     environ.Path(__file__) - 3
 )  # (kierudsen/config/settings/base.py - 3 = kierudsen/)
 APPS_DIR = ROOT_DIR.path("kierudsen")
+PROJECT_DIR = APPS_DIR
+BASE_DIR = APPS_DIR
 
 env = environ.Env()
 
